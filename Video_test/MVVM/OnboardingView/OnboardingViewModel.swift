@@ -70,7 +70,8 @@ class OnboardingViewModel: ObservableObject {
         }
         
         let item = items[page]
-        let player = AVPlayer(url: item.videoURL)
+        guard let videoURL = item.videoURL else { return }
+        let player = AVPlayer(url: videoURL)
         player.actionAtItemEnd = .none
         player.isMuted = self.playersIsMuted[page] ?? false
         

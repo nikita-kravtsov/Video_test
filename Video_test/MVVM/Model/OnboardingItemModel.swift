@@ -13,7 +13,7 @@ struct OnboardingItemModel: Identifiable {
     let videoName: String
     let videoExtension: String
     
-    var videoURL: URL {
-        Bundle.main.url(forResource: videoName, withExtension: videoExtension)!
+    var videoURL: URL? {
+        Bundle.main.url(forResource: videoName, withExtension: videoExtension)
     }
 }
